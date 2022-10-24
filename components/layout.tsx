@@ -1,6 +1,6 @@
-import type { ReactElement } from 'react'
+import type { ReactElement } from 'react';
 
-function Layout({ children } : { children: ReactElement }): ReactElement {
+function Layout({ children }: { children: ReactElement }): ReactElement {
     return (
         <>
             <main>{children}</main>
