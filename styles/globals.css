@@ -23,22 +23,22 @@
 }
 
 @layer components {
-    .btn {
-        @apply block w-fit mx-auto text-center shadow-md font-bold px-6 py-4 rounded select-none;
-        --color: transparent;
-    }
+  .btn {
+    @apply block w-fit mx-auto text-center shadow-md font-bold px-6 py-4 rounded select-none;
+    --color: transparent;
+  }
 
-    .btn-primary {
-        --color: theme("colors.button_primary");
-        background-color: var(--color);
-    }
+  .btn-primary {
+    --color: theme("colors.button_primary");
+    background-color: var(--color);
+  }
 
-    .btn-outline {
-        @apply border-2 bg-transparent;
-        border-color: var(--color);
-    }
+  .btn-outline {
+    @apply border-2 bg-transparent;
+    border-color: var(--color);
+  }
 
-    .btn-sm {
-        @apply text-xs;
-    }
+  .btn-sm {
+    @apply text-xs;
+  }
 }
