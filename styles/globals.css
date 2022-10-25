@@ -24,7 +24,7 @@
 
 @layer components {
     .btn {
-        @apply block w-fit mx-auto text-center shadow-md font-bold px-6 py-4 rounded;
+        @apply block w-fit mx-auto text-center shadow-md font-bold px-6 py-4 rounded select-none;
         --color: transparent;
     }
 
