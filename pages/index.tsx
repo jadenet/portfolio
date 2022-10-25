@@ -5,13 +5,6 @@ import Resume from '../public/links/resume.svg';
 import Tools from '../public/tools.svg';
 import LogoLink from '../components/LogoLink';
 
-const links = [
-  { src: LinkedIn, href: '' },
-  { src: Email, href: 'mailto:jaedwards35@proton.me' },
-  { src: GitHub, href: 'https://github.com/jadenet' },
-  { src: Resume, href: '' },
-];
-
 function Home() {
   return (
     <>
@@ -20,9 +13,10 @@ function Home() {
           <h1 className='text-5xl font-black text-center'>Jaden Edwards</h1>
           <h6 className='text-xl font-normal text-center'>Software Engineer</h6>
           <div className='flex gap-3'>
-            {links.map((link) => {
-              return <LogoLink src={link.src} href={link.href} />
-            })}
+            <LogoLink src={LinkedIn} href='' />
+            <LogoLink src={Email} href='mailto:jaedwards35@proton.me' />
+            <LogoLink src={GitHub} href='https://github.com/jadenet' />
+            <LogoLink src={Resume} href='' />
           </div>
         </div>
 
