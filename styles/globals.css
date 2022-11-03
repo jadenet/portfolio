@@ -3,42 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: theme("colors.background_primary");
     color: theme("colors.text_primary");
     font-family: theme("fontFamily.roboto_slab");
-  }
-
-  a {
-    transition: box-shadow 0.1s ease-in-out, height 0.2s ease-in-out;
-  }
-
-  a:hover {
-    transform: scale(1.05);
-  }
-
-  a:active {
-    transform: scale(1.1);
-  }
-}
-
-@layer components {
-  .btn {
-    @apply block w-fit mx-auto text-center shadow-md font-bold px-6 py-4 rounded select-none;
-    --color: transparent;
-  }
-
-  .btn-primary {
-    --color: theme("colors.button_primary");
-    background-color: var(--color);
-  }
-
-  .btn-outline {
-    @apply border-2 bg-transparent;
-    border-color: var(--color);
-  }
-
-  .btn-sm {
-    @apply text-xs;
   }
 }
