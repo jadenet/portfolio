@@ -8,7 +8,7 @@ const links: { name: string, link: string }[] = [
 function Layout({ children }: { children: ReactElement }): ReactElement {
     return (
         <>
-            <nav className="flex justify-start p-5 px-10 gap-8">
+            <nav className="absolute flex top-0 justify-start p-5 px-10 gap-8">
                 {links.map((link) =>
                     <a href={link.link} className="font-bold py-2 px-5 hover:scale-105 active:scale-95 transition text-text_primary">{link.name}</a>
                 )}

@@ -3,7 +3,7 @@ import Project from '../components/Project';
 function Projects() {
   return (
     <>
-      <h1 id="projects" className="text-4xl font-bold text-center mt-4">My Projects</h1>
+      <h1 id="projects" className="mt-20 text-4xl font-bold text-center">My Projects</h1>
 
       <section className="flex flex-col gap-6 items-center min-h-full my-12">
         <div className="flex flex-col md:flex-row justify-between items-center w-5/6 md:w-auto gap-4 md:gap-6 min-h-max px-3 py-2 bg-background_secondary rounded-xl">
