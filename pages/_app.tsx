@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <a href="#" className="hidden md:inline font-bold hover:scale-105 active:scale-95 transition text-sm text-text_primary bg-button_primary px-6 py-4 rounded-full fixed top-[85%] left-[90%]">/\</a>
 
       <div>
-        <div className="absolute bg-background_darker -z-20 opacity-30 w-full min-h-full -rotate-45 -left-1/3 -top-2/3"></div>
+        <div className="absolute bg-background_darker -z-20 opacity-30 w-full min-h-full -rotate-[35deg] -left-[28%] -top-2/3"></div>
         <div className="grid grid-rows-[20]">
           {codeLocations.map((code) => {
             return <Code className="absolute h-16 -z-10 opacity-5" style={{ top: `${code.top}rem`, left: `${code.left}rem` }}></Code>;
