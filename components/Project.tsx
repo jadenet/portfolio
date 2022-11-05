@@ -1,22 +1,28 @@
 import Image from 'next/image';
 
 interface ProjectProps {
-    title: string;
-    date: string;
-    tags: string[];
+    name: string;
+    date: { year: number; month: number };
+    tools: string[];
     description: string;
     demo?: string;
+    source: string;
+    image: string;
 }
 
+// const months = ["January", "February", "March"] date
+
 function Project(props: ProjectProps) {
+    const date = new Date(props.date.year, props.date.month);
+
     return (
         <article className="flex flex-col w-5/6 lg:w-3/5 md:flex-row bg-background_secondary rounded-xl">
-            <img className="bg-slate-700 w-full h-60 md:w-7/12 md:h-auto rounded-t-xl md:rounded-tr-none md:rounded-bl-xl" />
+            <Image src={props.image} alt="Project image" width={500} height={500} className="bg-slate-700 rounded-t-xl md:rounded-tr-none md:rounded-bl-xl" />
             <div className="flex flex-col gap-5 p-6 md:w-5/12 text-text_secondary">
-                <p className="text-right">{props.date}</p>
-                <h2 className="font-black text-3xl">{props.title}</h2>
+                <p className="text-right">{`${date.toLocaleDateString("default", { month: "short" })} ${date.getFullYear()}`}</p>
+                <h2 className="font-black text-3xl">{props.name}</h2>
                 <div className="flex flex-wrap gap-2">
-                    {props.tags.map((tag) => {
+                    {props.tools.map((tag) => {
                         return <span className="border border-text_secondary rounded p-1">{tag}</span>
                     })}
                 </div>
