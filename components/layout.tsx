@@ -12,7 +12,7 @@ const links = [
 function Layout({ children }: LayoutProps) {
     return (
         <>
-            <nav className="absolute w-full top-0 p-5 md:pl-10 flex items-center gap-4">
+            <nav className="absolute flex top-0 justify-start p-5 px-10 gap-8">
                 {links.map((link) =>
                     <a href={link.link} className="font-bold py-2 px-5 hover:scale-105 active:scale-95 transition text-text_primary">{link.name}</a>
                 )}
