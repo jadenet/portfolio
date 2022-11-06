@@ -28,10 +28,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </Layout>
 
-      <a href="#" className="hidden md:inline font-bold hover:scale-105 active:scale-95 transition text-sm text-text_primary bg-button_primary px-6 py-4 rounded-full fixed top-[85%] left-[90%]">/\</a>
+      <a href="#" className="hidden md:inline font-bold hover:scale-105 active:scale-95 transition text-sm bg-blue-400 px-6 py-5 rounded-full fixed bottom-8 right-8">/\</a>
 
       <div>
-        <div className="absolute bg-background_darker -z-20 opacity-30 w-full min-h-full -rotate-[35deg] -left-[28%] -top-2/3"></div>
+        <div className="absolute bg-gray-900 -z-20 opacity-30 w-full min-h-full -rotate-[35deg] -left-[28%] -top-2/3"></div>
         <div className="grid grid-rows-[20]">
           {codeLocations.map((code) => {
             return <Code className="absolute h-16 -z-10 opacity-5" style={{ top: `${code.top}rem`, left: `${code.left}rem` }}></Code>;

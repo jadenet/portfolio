@@ -23,7 +23,7 @@ function Home() {
 
           <Tools className="hidden md:block md:max-w-xl" />
         </div>
-        <a href="/projects" className="shadow-md font-bold px-5 py-4 rounded-lg hover:brightness-95 active:scale-95 transition bg-button_primary text-sm">View projects</a>
+        <a href="/projects" className="shadow-md font-bold px-5 py-4 rounded-lg hover:brightness-95 active:scale-95 transition bg-blue-400 text-sm">View projects</a>
       </section>
     </>
   )
