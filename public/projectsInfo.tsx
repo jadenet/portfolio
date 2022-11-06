@@ -6,7 +6,7 @@ const Projects = [
     "tools": ["React", "NextJS", "Tailwind"],
     "demo": "",
     "source": "",
-    "image": "/"
+    "image": "https://imgs.search.brave.com/URIFScfOxp_htEumsqlVjCJP-LQAX9Z5uwmotdi527A/rs:fit:538:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5s/NllYejljaVRnWEsz/MkgtN3N1TkpnSGFH/aCZwaWQ9QXBp"
   },
   {
     "name": "2",
@@ -15,7 +15,7 @@ const Projects = [
     "tools": ["React", "NextJS"],
     "demo": "",
     "source": "",
-    "image": "/"
+    "image": "https://imgs.search.brave.com/URIFScfOxp_htEumsqlVjCJP-LQAX9Z5uwmotdi527A/rs:fit:538:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5s/NllYejljaVRnWEsz/MkgtN3N1TkpnSGFH/aCZwaWQ9QXBp"
   },
   {
     "name": "3",
@@ -24,7 +24,7 @@ const Projects = [
     "tools": ["SCSS"],
     "demo": "",
     "source": "",
-    "image": "/"
+    "image": "https://imgs.search.brave.com/URIFScfOxp_htEumsqlVjCJP-LQAX9Z5uwmotdi527A/rs:fit:538:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5s/NllYejljaVRnWEsz/MkgtN3N1TkpnSGFH/aCZwaWQ9QXBp"
   },
   {
     "name": "4",
@@ -33,7 +33,7 @@ const Projects = [
     "tools": ["NextJS", "Tailwind"],
     "demo": "",
     "source": "",
-    "image": "/"
+    "image": "https://imgs.search.brave.com/URIFScfOxp_htEumsqlVjCJP-LQAX9Z5uwmotdi527A/rs:fit:538:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5s/NllYejljaVRnWEsz/MkgtN3N1TkpnSGFH/aCZwaWQ9QXBp"
   }
 ]
 
