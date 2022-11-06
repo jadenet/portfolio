@@ -21,7 +21,7 @@ function CheckList(props: CheckListProps) {
         }
 
         props.setFunction(newSelected);
-        setSelected(newSelected)
+        setSelected(newSelected);
     }
 
     return (

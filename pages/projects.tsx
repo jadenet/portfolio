@@ -53,8 +53,9 @@ function Projects() {
 
       <section className="flex flex-col gap-6 items-center min-h-full my-12">
         <div className="flex flex-col md:flex-row justify-between items-center w-5/6 md:w-auto gap-4 min-h-max p-3 bg-white text-black rounded-md">
-          <div className="w-full md:w-72 h-10 bg-slate-200 rounded-md">
-            <input type="search" placeholder="Search" onChange={(e) => { setCurrentSearch(e.target.value) }} className="text-black w-full h-full p-2 rounded-md bg-slate-200 placeholder:text-gray-400 accent-blue-400 focus:rounded-md font-medium select-none"></input>
+          <div className="flex items-center relative w-full md:w-72 h-10 bg-slate-200 rounded-md">
+            <input type="search" placeholder="Search" onChange={(e) => { setCurrentSearch(e.target.value) }} value={currentSearch} className="text-black rounded-md w-full px-4 py-2 bg-slate-200 placeholder:text-gray-400 accent-blue-400 focus:rounded-md font-medium select-none"></input>
+            <button onClick={() => { setCurrentSearch("") }} className={`absolute right-4 opacity-20 hover:scale-105 active:scale-95 transition text-lg ${!currentSearch && "hidden"}`}>X</button>
           </div>
           <div className="flex w-full md:w-auto justify-around md:justify-end md:gap-8">
             <Dropdown text="Tools \/">
