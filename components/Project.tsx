@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 interface ProjectProps {
     name: string;
     date: { year: number; month: number };
@@ -10,26 +8,30 @@ interface ProjectProps {
     image: string;
 }
 
-// const months = ["January", "February", "March"] date
-
 function Project(props: ProjectProps) {
     const date = new Date(props.date.year, props.date.month);
 
     return (
-        <article className="flex flex-col w-5/6 lg:w-3/5 md:flex-row bg-background_secondary rounded-xl">
-            <Image src={props.image} alt="Project image" width={500} height={500} className="bg-slate-700 rounded-t-xl md:rounded-tr-none md:rounded-bl-xl" />
-            <div className="flex flex-col gap-5 p-6 md:w-5/12 text-text_secondary">
-                <p className="text-right">{`${date.toLocaleDateString("default", { month: "short" })} ${date.getFullYear()}`}</p>
-                <h2 className="font-black text-3xl">{props.name}</h2>
-                <div className="flex flex-wrap gap-2">
-                    {props.tools.map((tag) => {
-                        return <span className="border border-text_secondary rounded p-1">{tag}</span>
-                    })}
+        <article className="flex flex-col w-5/6 lg:w-3/5 md:flex-row bg-white text-black rounded-xl">
+            <div className="relative md:w-3/5 overflow-hidden rounded-t-xl md:rounded-tr-none md:rounded-bl-xl bg-gray-900">
+                <img src={props.image} alt="Project image" className="absolute w-full h-full object-cover blur-md scale-105" />
+                <img src={props.image} alt="Project image" className="absolute w-full h-full object-contain" />
+            </div>
+            <div className="flex flex-col justify-between gap-5 p-6 md:w-2/5">
+                <div className="flex flex-col gap-5">
+                    <p className="text-right">{`${date.toLocaleDateString("default", { month: "short" })} ${date.getFullYear()}`}</p>
+                    <h2 className="font-black text-3xl">{props.name}</h2>
+                    <div className="flex flex-wrap gap-2">
+                        {props.tools.map((tag) => {
+                            return <span className="border border-black rounded p-1">{tag}</span>
+                        })}
+                    </div>
+                    <p>{props.description}</p>
                 </div>
-                <p className="text-text_secondary">{props.description}</p>
-                <div className="flex gap-2 justify-end">
-                    {props.demo && <a href={props.demo} className="font-bold py-2 px-5 rounded-lg hover:brightness-95 active:scale-95 transition border-2 text-button_primary border-button_primary text-sm">Demo</a>}
-                    <button className="font-bold hover:scale-105 active:scale-95 transition rounded-md py-2 px-5 text-sm text-text_primary bg-button_primary">Source Code</button>
+
+                <div className="flex items-center gap-2 justify-end">
+                    {props.demo != null && <a href={props.demo} className="font-bold py-2 px-5 rounded-lg hover:scale-105 active:scale-95 transition border-2 text-sm text-blue-400 border-blue-400">Demo</a>}
+                    {props.source != null && <a href={props.source} className="font-bold py-2 px-5 rounded-lg hover:scale-105 active:scale-95 transition border-2 text-sm text-white bg-blue-400 border-blue-400">Source Code</a>}
                 </div>
             </div>
         </article>
