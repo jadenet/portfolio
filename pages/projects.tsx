@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Project from '../components/Project';
-import projectsInfo from '../public/projects';
+import projectsInfo from '../public/projectsInfo';
 import Dropdown from '../components/Dropdown';
 import CheckList from '../components/CheckList';
 import RadioList from '../components/RadioList';
@@ -18,6 +18,7 @@ const compareDates = {
 
 function Projects() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [currentSearch, setCurrentSearch] = useState("");
   const [selectedTools, setSelectedTools] = useState(defaultTools);
   const [selectedDate, setSelectedDate] = useState<"Newest" | "Oldest">(defaultDate);
   const [selectedProjects, setSelectedProjects] = useState(projectsInfo)
@@ -26,7 +27,7 @@ function Projects() {
     let currentProjects = projectsInfo.filter((project) => {
       return selectedTools.every((tool) => {
         return project.tools.includes(tool);
-      })
+      }) && (project.name.includes(currentSearch) || project.description.includes(currentSearch))
     })
 
     const compareDate = compareDates[selectedDate];
@@ -39,7 +40,7 @@ function Projects() {
     })
 
     setSelectedProjects(currentProjects);
-  }, [selectedTools, selectedDate])
+  }, [selectedTools, selectedDate, currentSearch])
 
   function changePage(page: number) {
     setCurrentPage(page);
@@ -48,12 +49,14 @@ function Projects() {
 
   return (
     <>
-      <h1 id="projects" className="mt-20 text-4xl font-bold text-center">My Projects</h1>
+      <h1 id="projects" className="mt-24 text-4xl font-bold text-center">My Projects</h1>
 
       <section className="flex flex-col gap-6 items-center min-h-full my-12">
-        <div className="flex flex-col md:flex-row justify-between items-center w-5/6 md:w-auto gap-4 md:gap-6 min-h-max px-3 py-2 bg-background_secondary rounded-xl">
-          <div className="w-full md:w-72 h-10 bg-slate-200 rounded"></div>
-          <div className="flex w-full justify-around md:justify-end md:gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center w-5/6 md:w-auto gap-4 min-h-max p-3 bg-white text-black rounded-md">
+          <div className="w-full md:w-72 h-10 bg-slate-200 rounded-md">
+            <input type="search" placeholder="Search" onChange={(e) => { setCurrentSearch(e.target.value) }} className="text-black w-full h-full p-2 rounded-md bg-slate-200 placeholder:text-gray-400 accent-blue-400 focus:rounded-md font-medium select-none"></input>
+          </div>
+          <div className="flex w-full md:w-auto justify-around md:justify-end md:gap-8">
             <Dropdown text="Tools \/">
               <CheckList default={defaultTools} options={toolsOptions} setFunction={(selected: []) => { setSelectedTools(selected); }} />
             </Dropdown>
@@ -71,11 +74,11 @@ function Projects() {
         </div>
 
         <div className="flex gap-4">
-          <button disabled={(currentPage === 1) ? true : false} onClick={() => { changePage(1) }} className={`btn btn-ghost p-0 ${(currentPage === 1) ? "opacity-10" : ""}`}>{"<<"}</button>
-          <button disabled={(currentPage === 1) ? true : false} onClick={() => { changePage(currentPage - 1) }} className={`btn btn-ghost p-0 ${(currentPage === 1) ? "opacity-10" : ""}`}>{"<"}</button>
+          <button disabled={(currentPage === 1) ? true : false} onClick={() => { changePage(1) }} className={`${(currentPage === 1) ? "opacity-10" : ""}`}>{"<<"}</button>
+          <button disabled={(currentPage === 1) ? true : false} onClick={() => { changePage(currentPage - 1) }} className={`p-0 ${(currentPage === 1) ? "opacity-10" : ""}`}>{"<"}</button>
           <div>{`Page ${currentPage} of ${numPages}`}</div>
-          <button disabled={(currentPage === numPages) ? true : false} onClick={() => { changePage(currentPage + 1) }} className={`btn btn-ghost p-0 ${(currentPage === numPages) ? "opacity-10" : ""}`}>{">"}</button>
-          <button disabled={(currentPage === numPages) ? true : false} onClick={() => { changePage(numPages) }} className={`btn btn-ghost p-0 ${(currentPage === numPages) ? "opacity-10" : ""}`}>{">>"}</button>
+          <button disabled={(currentPage === numPages) ? true : false} onClick={() => { changePage(currentPage + 1) }} className={`${(currentPage === numPages) ? "opacity-10" : ""}`}>{">"}</button>
+          <button disabled={(currentPage === numPages) ? true : false} onClick={() => { changePage(numPages) }} className={`${(currentPage === numPages) ? "opacity-10" : ""}`}>{">>"}</button>
         </div>
       </section>
     </>
