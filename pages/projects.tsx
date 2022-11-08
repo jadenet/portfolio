@@ -27,7 +27,7 @@ function Projects() {
     let currentProjects = projectsInfo.filter((project) => {
       return selectedTools.every((tool) => {
         return project.tools.includes(tool);
-      }) && (project.name.includes(currentSearch) || project.description.includes(currentSearch))
+      }) && (project.name.toLowerCase().includes(currentSearch.toLowerCase()) || project.description.toLowerCase().includes(currentSearch.toLowerCase()))
     })
 
     const compareDate = compareDates[selectedDate];
