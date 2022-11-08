@@ -14,7 +14,7 @@ function Project(props: ProjectProps) {
     return (
         <article className="flex flex-col w-5/6 lg:w-3/5 md:flex-row bg-white text-black rounded-xl">
             <div className="relative md:w-3/5 overflow-hidden rounded-t-xl md:rounded-tr-none md:rounded-bl-xl bg-gray-900">
-                <img src={props.image} alt="Project image" className="absolute w-full h-full object-cover blur-md scale-105" />
+                <img aria-hidden src={props.image} alt="Project image" className="absolute w-full h-full object-cover blur-md scale-105" />
                 <img src={props.image} alt="Project image" className="absolute w-full h-full object-contain" />
             </div>
             <div className="flex flex-col justify-between gap-5 p-6 md:w-2/5">
