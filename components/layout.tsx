@@ -7,6 +7,7 @@ interface LayoutProps {
 const links = [
     { name: "Home", link: "/" },
     { name: "Projects", link: "/projects" },
+    { name: "About", link: "/about" },
 ]
 
 function Layout({ children }: LayoutProps) {
@@ -17,9 +18,9 @@ function Layout({ children }: LayoutProps) {
                     <a href={link.link} className="font-bold py-2 px-5 hover:scale-105 active:scale-95 transition">{link.name}</a>
                 )}
             </nav>
-            <main>{children}</main>
+            <main className="flex-1">{children}</main>
             <footer className="flex items-center justify-center p-8 gap-4 bg-gray-900">
-                @Jaden Edwards. All Rights Reserved.
+                ©Jaden Edwards. All Rights Reserved.
             </footer>
         </>
     )
