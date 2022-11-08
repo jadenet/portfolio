@@ -44,7 +44,7 @@ function Projects() {
 
   function changePage(page: number) {
     setCurrentPage(page);
-    window.scrollTo({ top: 0 });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
