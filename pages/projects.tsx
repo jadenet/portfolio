@@ -12,8 +12,8 @@ const defaultDate = "Newest";
 const numPages = Math.ceil(projectsInfo.length / 5);
 
 const compareDates = {
-  Newest: (dateA: Date, dateB: Date) => ((dateA > dateB) ? 1 : -1),
-  Oldest: (dateA: Date, dateB: Date) => ((dateA < dateB) ? 1 : -1)
+  Newest: (dateA: Date, dateB: Date) => ((dateA < dateB) ? 1 : -1),
+  Oldest: (dateA: Date, dateB: Date) => ((dateA > dateB) ? 1 : -1)
 }
 
 function Projects() {
