@@ -5,7 +5,7 @@ import Dropdown from '../components/Dropdown';
 import CheckList from '../components/CheckList';
 import RadioList from '../components/RadioList';
 
-const toolsOptions = ["HTML", "CSS", "Javascript", "React", "Tailwind", "SCSS", "NextJS"];
+const toolsOptions = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Svelte", "NextJS", "Tailwind", "SCSS"];
 const dateOptions = ["Newest", "Oldest"];
 const defaultTools: string[] = [];
 const defaultDate = "Newest";
