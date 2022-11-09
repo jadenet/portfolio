@@ -1,39 +1,44 @@
+import iScream from './images/iScream.png';
+import TwoHourFrontPage from './images/2 Hour Front Page.png';
+import iLuminate from './images/i-luminate.png';
+import portfolio from './images/portfolio.png';
+
 const Projects = [
   {
-    "name": "Project 1",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in massa sodales, sodales tellus eget, malesuada dolor. Nunc in metus posuere, vehicula nunc sit amet, egestas nisl. Fusce pharetra leo non purus lobortis congue. Suspendisse eget pretium arcu. Aliquam erat volutpat. Duis efficitur lorem nec imperdiet fringilla.",
-    "date": { year: 2022, month: 8 },
-    "tools": ["React", "NextJS", "Tailwind"],
-    "demo": "",
-    "source": "",
-    "image": "https://imgs.search.brave.com/URIFScfOxp_htEumsqlVjCJP-LQAX9Z5uwmotdi527A/rs:fit:538:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5s/NllYejljaVRnWEsz/MkgtN3N1TkpnSGFH/aCZwaWQ9QXBp"
-  },
-  {
-    "name": "Project 2",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in massa sodales, sodales tellus eget, malesuada dolor. Nunc in metus posuere, vehicula nunc sit amet, egestas nisl. Fusce pharetra leo non purus lobortis congue. Suspendisse eget pretium arcu. Aliquam erat volutpat. Duis efficitur lorem nec imperdiet fringilla.",
+    "name": "portfolio",
+    "description": "This website! After getting inspiration from other portfolio websites, I decided to make my own.",
     "date": { year: 2022, month: 9 },
-    "tools": ["React", "NextJS"],
-    "demo": "",
-    "source": "",
-    "image": "https://imgs.search.brave.com/URIFScfOxp_htEumsqlVjCJP-LQAX9Z5uwmotdi527A/rs:fit:538:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5s/NllYejljaVRnWEsz/MkgtN3N1TkpnSGFH/aCZwaWQ9QXBp"
+    "tools": ["HTML", "CSS", "TypeScript", "React", "NextJS", "Tailwind"],
+    "demo": null,
+    "source": "https://github.com/jadenet/portfolio",
+    "image": portfolio
   },
   {
-    "name": "Project 3",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in massa sodales, sodales tellus eget, malesuada dolor. Nunc in metus posuere, vehicula nunc sit amet, egestas nisl. Fusce pharetra leo non purus lobortis congue. Suspendisse eget pretium arcu. Aliquam erat volutpat. Duis efficitur lorem nec imperdiet fringilla.",
-    "date": { year: 2022, month: 10 },
-    "tools": ["SCSS"],
-    "demo": "",
-    "source": "",
-    "image": "https://imgs.search.brave.com/URIFScfOxp_htEumsqlVjCJP-LQAX9Z5uwmotdi527A/rs:fit:538:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5s/NllYejljaVRnWEsz/MkgtN3N1TkpnSGFH/aCZwaWQ9QXBp"
+    "name": "i-luminate",
+    "description": "Another challenge created for fun. This was my first time using frameworks and utilizing a database. Although it turns out I didn't actually need a database for this project, it taught me more nonetheless.",
+    "date": { year: 2022, month: 6 },
+    "tools": ["HTML", "CSS", "Svelte", "TypeScript", "Tailwind"],
+    "demo": null,
+    "source": "https://github.com/jadenet/i-luminate",
+    "image": iLuminate
   },
   {
-    "name": "Project 4",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in massa sodales, sodales tellus eget, malesuada dolor. Nunc in metus posuere, vehicula nunc sit amet, egestas nisl. Fusce pharetra leo non purus lobortis congue. Suspendisse eget pretium arcu. Aliquam erat volutpat. Duis efficitur lorem nec imperdiet fringilla.",
-    "date": { year: 2022, month: 11 },
-    "tools": ["NextJS", "Tailwind"],
-    "demo": "",
-    "source": "",
-    "image": "https://imgs.search.brave.com/URIFScfOxp_htEumsqlVjCJP-LQAX9Z5uwmotdi527A/rs:fit:538:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5s/NllYejljaVRnWEsz/MkgtN3N1TkpnSGFH/aCZwaWQ9QXBp"
+    "name": "iScream",
+    "description": "A friend suggested the idea and I wanted to try out html and css.",
+    "date": { year: 2022, month: 4 },
+    "tools": ["HTML", "CSS"],
+    "demo": "https://jadenet.github.io/iScream/",
+    "source": "https://github.com/jadenet/iScream",
+    "image": iScream
+  },
+  {
+    "name": "2 Hour Front Page",
+    "description": "The first website I've made! At the time I didn't know about responsiveness so it's best to not look at this on mobile. :>",
+    "date": { year: 2022, month: 3 },
+    "tools": ["HTML", "CSS"],
+    "demo": "https://jadenet.github.io/2-Hour-Front-Page/",
+    "source": "https://github.com/jadenet/2-Hour-Front-Page",
+    "image": TwoHourFrontPage
   }
 ]
 
