@@ -5,7 +5,7 @@ interface ProjectProps {
     date: { year: number; month: number };
     tools: string[];
     description: string;
-    demo?: string;
+    demo?: string | null;
     source: string;
     image: StaticImageData;
 }
