@@ -7,7 +7,7 @@ import RadioList from '../components/RadioList';
 
 const toolsOptions = ["JavaScript", "TypeScript", "React", "Svelte", "NextJS", "Tailwind", "SCSS"];
 const dateOptions = ["Newest", "Oldest"];
-const defaultTools: string[] = [];
+const defaultTools: [] = [];
 const defaultDate = "Newest";
 const numPages = Math.ceil(projectsInfo.length / 5);
 
