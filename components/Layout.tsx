@@ -1,4 +1,5 @@
 import type { ReactElement } from 'react';
+import Link from 'next/link';
 
 interface LayoutProps {
     children: ReactElement;
@@ -15,7 +16,7 @@ function Layout({ children }: LayoutProps) {
         <>
             <nav className="absolute flex top-0 justify-start py-5 px-5 md:px-10 gap-8">
                 {links.map((link) =>
-                    <a href={link.link} className="font-bold py-2 px-5 hover:scale-105 active:scale-95 transition">{link.name}</a>
+                    <Link href={link.link} className="font-bold py-2 px-5 hover:scale-105 active:scale-95 transition">{link.name}</Link>
                 )}
             </nav>
             <main className="flex-1">{children}</main>

@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 interface ProjectProps {
     name: string;
@@ -32,8 +33,8 @@ function Project(props: ProjectProps) {
                 </div>
 
                 <div className="flex items-center gap-2 justify-end">
-                    {props.demo != null && <a href={props.demo} target="_blank" className="font-bold py-2 px-5 rounded-lg hover:scale-105 active:scale-95 transition border-2 text-sm text-blue-400 border-blue-400">Demo</a>}
-                    {props.source != null && <a href={props.source} target="_blank" className="font-bold py-2 px-5 rounded-lg hover:scale-105 active:scale-95 transition border-2 text-sm text-white bg-blue-400 border-blue-400">Source Code</a>}
+                    {props.demo != null && <Link href={props.demo} target="_blank" className="font-bold py-2 px-5 rounded-lg hover:scale-105 active:scale-95 transition border-2 text-sm text-blue-400 border-blue-400">Demo</Link>}
+                    {props.source != null && <Link href={props.source} target="_blank" className="font-bold py-2 px-5 rounded-lg hover:scale-105 active:scale-95 transition border-2 text-sm text-white bg-blue-400 border-blue-400">Source Code</Link>}
                 </div>
             </div>
         </article>
