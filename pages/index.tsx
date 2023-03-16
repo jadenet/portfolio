@@ -36,8 +36,8 @@ function Home() {
         </Link>
       </section>
 
-      <section className="flex gap-8 items-center my-12 mx-24 md:mx-52">
-        <Image src={avatar} width="1200" alt="avatar" />
+      <section className="flex flex-col lg:flex-row gap-8 items-center my-12 mx-24 md:mx-52">
+        <Image src={avatar} width="1000" alt="avatar" />
         <div className="flex flex-col gap-8 items-center">
           <h2 className="text-4xl font-bold text-center min-w-fit">
             About me 😎
