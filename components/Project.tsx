@@ -44,7 +44,7 @@ function Project(props: ProjectProps) {
               );
             })}
           </div>
-          {props.description}
+          <p>{props.description}</p>
         </div>
 
         <div className="flex items-center gap-2 justify-end">
