@@ -3,11 +3,22 @@ import TwoHourFrontPage from "./images/projects/2 Hour Front Page.png";
 import iLuminate from "./images/projects/i-luminate.png";
 import portfolio from "./images/projects/portfolio.png";
 import theNewOil from "./images/projects/The New Oil.png";
+import MentorMe from "./images/projects/MentorMe.png";
+import Werewolf from "./images/projects/Werewolf.png"
 
 const Projects = [
   {
+    name: "One Night Werewolf Boardgame (WIP)",
+    description: "Occasionally orking on making an online version of the Werewolf boardgame. The main features will include lobby creation and video calling.",
+    date: { year: 2024, month: 4 },
+    tools: ["HTML", "CSS", "TypeScript", "React", "NextJS", "Tailwind", "DaisyUI"],
+    demo: "https://werewolf-peom.onrender.com/",
+    source: "https://gitlab.com/thenewoil/website",
+    image: Werewolf,
+  },
+  {
     name: "The New Oil",
-    description: "In a collaboration with Rik (https://www.rikdenbreejen.nl), we redesigned and developed a website to improve UI and maintainability. We were given a challenge to include no client-side javascript per request, so we went with a static site generator that could build the code of the website containing no javascript.",
+    description: "In a collaboration with a partner, we redesigned and developed a website to improve UI and maintainability. We were given a challenge to include no client-side javascript per request, so we went with a static site generator that could build the code of the website containing no javascript.",
     date: { year: 2023, month: 1 },
     tools: ["HTML", "CSS", "Astro", "Tailwind"],
     demo: "https://thenewoil.org",
@@ -22,6 +33,14 @@ const Projects = [
     demo: "https://jadenet.github.io",
     source: "https://github.com/jadenet/jadenet.github.io",
     image: portfolio,
+  },
+  {
+    name: "ShellHacks2022 | MentorMe",
+    description: "I participated in a 3-day long hackathon where I grouped up with 3 others to create an execute a development idea. I used the time as an opportunity to gain collaborative and more coding experience working on a thought-out project.",
+    date: { year: 2022, month: 9 },
+    tools: ["HTML", "CSS", "JavaScript", "React", "NextJS", "MUI"],
+    source: "https://github.com/jadenet/jadenet.github.io",
+    image: MentorMe,
   },
   {
     name: "i-luminate",
