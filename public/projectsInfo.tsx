@@ -9,7 +9,7 @@ import Werewolf from "./images/projects/Werewolf.png"
 const Projects = [
   {
     name: "One Night Werewolf Boardgame (WIP)",
-    description: "Occasionally orking on making an online version of the Werewolf boardgame. The main features will include lobby creation and video calling.",
+    description: "Occasionally working on making an online version of the Werewolf boardgame. The main features will include lobby creation and video calling.",
     date: { year: 2024, month: 4 },
     tools: ["HTML", "CSS", "TypeScript", "React", "NextJS", "Tailwind", "DaisyUI"],
     demo: "https://werewolf-peom.onrender.com/",
