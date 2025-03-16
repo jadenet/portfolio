@@ -8,6 +8,7 @@ interface LayoutProps {
 const links = [
   { name: "Home", link: "/" },
   { name: "Projects", link: "/projects" },
+  { name: "About", link: "/about" },
 ];
 
 function Layout({ children }: LayoutProps) {
