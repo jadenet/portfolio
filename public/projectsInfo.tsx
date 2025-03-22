@@ -30,8 +30,8 @@ const Projects = [
     description: "This website! After getting inspiration from other portfolio websites, I decided to make my own.",
     date: { year: 2022, month: 9 },
     tools: ["HTML", "CSS", "TypeScript", "React", "NextJS", "Tailwind"],
-    demo: "https://jadenet.github.io",
-    source: "https://github.com/jadenet/jadenet.github.io",
+    demo: "https://jadenet.github.io/portfolio",
+    source: "https://github.com/jadenet/portfolio",
     image: portfolio,
   },
   {
