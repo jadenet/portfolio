@@ -7,7 +7,7 @@ interface ProjectProps {
   tools: string[];
   description: string;
   demo?: string | null;
-  source: string;
+  source?: string | null;
   image: StaticImageData;
 }
 
