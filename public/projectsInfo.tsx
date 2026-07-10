@@ -9,16 +9,15 @@ import Werewolf from "./images/projects/Werewolf.png"
 const Projects = [
   {
     name: "One Night Werewolf Boardgame (WIP)",
-    description: "Occasionally working on making an online version of the Werewolf boardgame. The main features will include lobby creation and video calling.",
+    description: "An online version of the Werewolf boardgame. Features include voice calling and lobby creation.",
     date: { year: 2024, month: 4 },
     tools: ["HTML", "CSS", "TypeScript", "React", "NextJS", "Tailwind", "DaisyUI"],
     demo: "https://werewolf-peom.onrender.com/",
-    source: "https://gitlab.com/thenewoil/website",
     image: Werewolf,
   },
   {
     name: "The New Oil",
-    description: "In a collaboration with a partner, we redesigned and developed a website to improve UI and maintainability. We were given a challenge to include no client-side javascript per request, so we went with a static site generator that could build the code of the website containing no javascript.",
+    description: "Redesigned and developed a website to improve UI and maintainability. We were given a challenge to include no client-side javascript per request, so we went with a static site generator that could build the code of the website containing no javascript.",
     date: { year: 2023, month: 1 },
     tools: ["HTML", "CSS", "Astro", "Tailwind"],
     demo: "https://thenewoil.org",
@@ -39,7 +38,6 @@ const Projects = [
     description: "I participated in a 3-day long hackathon where I grouped up with 3 others to create an execute a development idea. I used the time as an opportunity to gain collaborative and more coding experience working on a thought-out project.",
     date: { year: 2022, month: 9 },
     tools: ["HTML", "CSS", "JavaScript", "React", "NextJS", "MUI"],
-    source: "https://github.com/jadenet/jadenet.github.io",
     image: MentorMe,
   },
   {
@@ -48,7 +46,6 @@ const Projects = [
     date: { year: 2022, month: 6 },
     tools: ["HTML", "CSS", "Svelte", "TypeScript", "Tailwind", "Supabase"],
     demo: null,
-    source: "https://github.com/jadenet/i-luminate",
     image: iLuminate,
   },
   {
@@ -56,7 +53,6 @@ const Projects = [
     description: "A friend suggested the idea and I wanted to try out html and css.",
     date: { year: 2022, month: 4 },
     tools: ["HTML", "CSS"],
-    source: "https://github.com/jadenet/iScream",
     image: iScream,
   },
   {
@@ -64,7 +60,6 @@ const Projects = [
     description: "The first website I've made! At the time I didn't know about responsiveness so it's best to not look at this on mobile.",
     date: { year: 2022, month: 3 },
     tools: ["HTML", "CSS"],
-    source: "https://github.com/jadenet/2-Hour-Front-Page",
     image: TwoHourFrontPage,
   },
 ];

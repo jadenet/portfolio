@@ -16,7 +16,7 @@ function Home() {
           <div className="flex flex-col justify-center gap-4 items-center">
             <h1 className="text-5xl font-black text-center">Jaden Edwards</h1>
             <h6 className="text-xl font-normal text-center">
-              Aspiring Software Engineer
+              Full-Stack Developer
             </h6>
             <div className="flex gap-3">
               <LogoLink src={LinkedIn} href="https://www.linkedin.com/in/jadenet/" />
