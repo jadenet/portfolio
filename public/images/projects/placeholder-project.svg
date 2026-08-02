@@ -1,0 +1,17 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2E4139"/>
+      <stop offset="1" stop-color="#7C9172"/>
+    </linearGradient>
+    <linearGradient id="shape" x1="153" y1="90" x2="487" y2="270" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E5C99A"/>
+      <stop offset="1" stop-color="#B88647"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="28" fill="url(#bg)"/>
+  <rect x="90" y="68" width="460" height="224" rx="20" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.34)" stroke-width="2"/>
+  <path d="M186 230L264 160L322 214L392 140L454 230H186Z" fill="url(#shape)"/>
+  <circle cx="234" cy="128" r="18" fill="url(#shape)"/>
+  <text x="320" y="316" text-anchor="middle" fill="rgba(255,255,255,0.88)" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600" letter-spacing="1.5">PROJECT PREVIEW</text>
+</svg>

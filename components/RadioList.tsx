@@ -9,25 +9,26 @@ function RadioList(props: RadioListProps) {
     <>
       {props.options.map((item, index) => {
         return (
-          <div className="flex gap-2 px-2 py-1 w-full hover:bg-gray-900 hover:bg-opacity-10 transition">
+          <label
+            key={item}
+            htmlFor={`radioItem${index}`}
+            className="flex w-full cursor-pointer items-center gap-3 rounded-2xl px-3 py-2 text-[var(--ink)] transition hover:bg-[var(--surface-hover)]"
+          >
             <input
               type="radio"
               id={`radioItem${index}`}
               name="date"
               defaultChecked={item === props.default ? true : false}
               value={item}
-              onClick={() => {
+              onChange={() => {
                 props.setFunction(item);
               }}
-              className="accent-blue-400"
+              className="h-4 w-4 accent-[var(--sage-deep)]"
             />
-            <label
-              htmlFor={`radioItem${index}`}
-              className="text-black hover:scale-[1.02] active:scale-[.97] transition select-none"
-            >
+            <span className="text-sm font-semibold tracking-[0.08em]">
               {item}
-            </label>
-          </div>
+            </span>
+          </label>
         );
       })}
     </>

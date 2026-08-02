@@ -1,13 +1,14 @@
 import Link from "next/link";
 
-function LogoLink(props: { href: string; src: any }) {
+function LogoLink(props: { href: string; src: any; label: string }) {
   return (
     <Link
-      className="font-bold hover:scale-105 active:scale-95 transition text-blue-400 w-8 h-8"
+      aria-label={props.label}
+      className="flex h-14 w-14 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--surface-strong)] text-[var(--sage-deep)] transition duration-200 hover:bg-[var(--surface-hover)]"
       href={props.href}
       target="_blank"
     >
-      <props.src width="inherit" height="inherit" />
+      <props.src width="24" height="24" />
     </Link>
   );
 }

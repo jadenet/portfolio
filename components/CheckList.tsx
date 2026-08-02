@@ -32,32 +32,33 @@ function CheckList(props: CheckListProps) {
         onClick={() => {
           onChange(null);
         }}
-        className={`px-2 py-1 w-full hover:bg-gray-900 hover:bg-opacity-10 hover:scale-[1.02] active:scale-[.97] transition select-none text-left ${
-          selected.length > 0 && "text-red-600 font-medium"
+        className={`w-full rounded-2xl px-3 py-2 text-left text-sm font-semibold uppercase tracking-[0.18em] transition hover:bg-[var(--surface-hover)] ${
+          selected.length > 0 ? "text-[var(--gold)]" : "text-[var(--ink-soft)]"
         }`}
       >
         ✨ Clear
       </button>
       {props.options.map((item, index) => {
         return (
-          <div className="flex gap-2 px-2 py-1 w-full hover:bg-gray-900 hover:bg-opacity-10 transition bg-white text-white">
+          <label
+            key={item}
+            htmlFor={`checklistItem${index}`}
+            className="flex w-full cursor-pointer items-center gap-3 rounded-2xl px-3 py-2 text-[var(--ink)] transition hover:bg-[var(--surface-hover)]"
+          >
             <input
               type="checkbox"
               id={`checklistItem${index}`}
               value={item}
               checked={selected.includes(item)}
-              onClick={() => {
+              onChange={() => {
                 onChange(item);
               }}
-              className="accent-blue-400"
+              className="h-4 w-4 rounded border-[var(--sage-deep)] accent-[var(--sage-deep)]"
             />
-            <label
-              htmlFor={`checklistItem${index}`}
-              className="text-black hover:scale-[1.02] active:scale-[.97] transition select-none"
-            >
+            <span className="text-sm font-semibold tracking-[0.08em]">
               {item}
-            </label>
-          </div>
+            </span>
+          </label>
         );
       })}
     </>

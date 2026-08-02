@@ -21,7 +21,7 @@ const toolsOptions = [
 const dateOptions = ["Newest", "Oldest"];
 const defaultTools: [] = [];
 const defaultDate = "Newest";
-const numPages = Math.ceil(projectsInfo.length / 5);
+const projectsPerPage = 6;
 
 const compareDates = {
   Newest: (dateA: Date, dateB: Date) => (dateA < dateB ? 1 : -1),
@@ -33,7 +33,7 @@ function Projects() {
   const [currentSearch, setCurrentSearch] = useState("");
   const [selectedTools, setSelectedTools] = useState(defaultTools);
   const [selectedDate, setSelectedDate] = useState<"Newest" | "Oldest">(
-    defaultDate
+    defaultDate,
   );
   const [selectedProjects, setSelectedProjects] = useState(projectsInfo);
 
@@ -60,7 +60,17 @@ function Projects() {
     });
 
     setSelectedProjects(currentProjects);
+    setCurrentPage(1);
   }, [selectedTools, selectedDate, currentSearch]);
+
+  const numPages = Math.max(
+    1,
+    Math.ceil(selectedProjects.length / projectsPerPage),
+  );
+  const visibleProjects = selectedProjects.slice(
+    currentPage * projectsPerPage - projectsPerPage,
+    currentPage * projectsPerPage,
+  );
 
   function changePage(page: number) {
     setCurrentPage(page);
@@ -68,33 +78,44 @@ function Projects() {
   }
 
   return (
-    <>
-      <h1 className="text-4xl font-bold text-center">My Projects 🔧</h1>
+    <section className="space-y-8">
+      <div className="section-shell space-y-6">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl space-y-3">
+            <h1 className="text-5xl font-semibold text-[var(--ink)] sm:text-6xl">
+              Projects
+            </h1>
+            <p className="text-lg leading-8 text-[var(--ink-soft)]">
+              From experiments and hackathons to classwork and client work, these are the projects that brought me into the software developer I am now.
+            </p>
+          </div>
+        </div>
 
-      <section className="flex flex-col gap-6 items-center my-12">
-        <div className="flex flex-col md:flex-row px-4 justify-between items-center w-5/6 md:w-auto gap-4 min-h-max p-3 bg-white text-black rounded-md">
-          <div className="flex items-center relative w-full md:w-72 h-10 bg-slate-200 rounded-md">
+        <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_auto] xl:items-center">
+          <div className="field-shell relative w-full">
             <input
               type="search"
-              placeholder="Search"
+              placeholder="Search by project name or summary"
               onChange={(e) => {
                 setCurrentSearch(e.target.value);
               }}
               value={currentSearch}
-              className="text-black rounded-md w-full px-4 py-2 bg-slate-200 placeholder:text-gray-400 accent-blue-400 focus:rounded-md font-medium select-none"
+              className="w-full bg-transparent pr-8 text-[var(--ink)] outline-none placeholder:text-[color:var(--ink-soft)]"
             ></input>
             <button
               onClick={() => {
                 setCurrentSearch("");
               }}
-              className={`absolute px-2 right-1 font-medium opacity-20 hover:scale-105 active:scale-95 transition text-lg ${
+              aria-label="Clear search"
+              className={`absolute right-4 text-lg font-medium text-[var(--ink-soft)] transition hover:scale-105 hover:text-[var(--ink)] ${
                 !currentSearch && "hidden"
               }`}
             >
-              X
+              ×
             </button>
           </div>
-          <div className="flex w-full md:w-auto justify-around md:justify-end md:gap-8">
+
+          <div className="flex flex-wrap gap-3">
             <Dropdown text="Tools">
               <CheckList
                 default={defaultTools}
@@ -115,73 +136,73 @@ function Projects() {
             </Dropdown>
           </div>
         </div>
+      </div>
 
-        <div className="flex flex-col items-center gap-6 w-full">
-          {selectedProjects
-            .slice(currentPage * 5 - 5, currentPage * 5)
-            .map((project) => {
-              return (
-                <Project
-                  image={project.image}
-                  demo={project.demo}
-                  source={project.source}
-                  name={project.name}
-                  date={project.date}
-                  tools={project.tools}
-                  description={project.description}
-                ></Project>
-              );
-            })}
-          <p
-            className={`${
-              selectedProjects.length === 0 ? "block" : "hidden"
-            } font-medium text-lg p-16`}
-          >
-            Sorry! None of my projects fit this criteria.
-          </p>
-        </div>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {visibleProjects.map((project) => {
+          return (
+            <Project
+              key={`${project.name}-${project.date.year}-${project.date.month}`}
+              image={project.image}
+              demo={project.demo}
+              source={project.source}
+              name={project.name}
+              date={project.date}
+              tools={project.tools}
+              description={project.description}
+            ></Project>
+          );
+        })}
+      </div>
 
-        <div className="flex gap-4">
-          <button
-            disabled={currentPage === 1 ? true : false}
-            onClick={() => {
-              changePage(1);
-            }}
-            className={`${currentPage === 1 ? "opacity-10" : ""}`}
-          >
-            {"<<"}
-          </button>
-          <button
-            disabled={currentPage === 1 ? true : false}
-            onClick={() => {
-              changePage(currentPage - 1);
-            }}
-            className={`p-0 ${currentPage === 1 ? "opacity-10" : ""}`}
-          >
-            {"<"}
-          </button>
-          <div>{`Page ${currentPage} of ${numPages}`}</div>
-          <button
-            disabled={currentPage === numPages ? true : false}
-            onClick={() => {
-              changePage(currentPage + 1);
-            }}
-            className={`${currentPage === numPages ? "opacity-10" : ""}`}
-          >
-            {">"}
-          </button>
-          <button
-            disabled={currentPage === numPages ? true : false}
-            onClick={() => {
-              changePage(numPages);
-            }}
-            className={`${currentPage === numPages ? "opacity-10" : ""}`}
-          >
-            {">>"}
-          </button>
-        </div>
-      </section>
-    </>
+      <p
+        className={`${
+          selectedProjects.length === 0 ? "block" : "hidden"
+        } section-shell w-full max-w-3xl text-center text-lg text-[var(--ink-soft)]`}
+      >
+        Sorry! None of my projects fit this criteria.
+      </p>
+
+      <div className="flex items-center justify-center gap-4 text-sm uppercase tracking-[0.22em] text-[var(--ink-soft)] sm:flex-row">
+        <button
+          disabled={currentPage === 1 ? true : false}
+          onClick={() => {
+            changePage(1);
+          }}
+          className="secondary-button px-4 py-2 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          &lt;&lt;
+        </button>
+        <button
+          disabled={currentPage === 1 ? true : false}
+          onClick={() => {
+            changePage(currentPage - 1);
+          }}
+          className="secondary-button px-4 py-2 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          &lt;
+        </button>
+        <p>{`Page ${currentPage} of ${numPages}`}</p>
+        <button
+          disabled={currentPage === numPages ? true : false}
+          onClick={() => {
+            changePage(currentPage + 1);
+          }}
+          className="secondary-button px-4 py-2 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          &gt;
+        </button>
+        <button
+          disabled={currentPage === numPages ? true : false}
+          onClick={() => {
+            changePage(numPages);
+          }}
+          className="secondary-button px-4 py-2 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          &gt;&gt;
+        </button>
+      </div>
+    </section>
   );
 }
 

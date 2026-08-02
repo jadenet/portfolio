@@ -1,0 +1,90 @@
+[
+  {
+    "name": "TypeScript",
+    "src": "https://cdn.simpleicons.org/typescript/3178c6"
+  },
+  {
+    "name": "JavaScript",
+    "src": "https://cdn.simpleicons.org/javascript/e3b341"
+  },
+  {
+    "name": "Python",
+    "src": "https://cdn.simpleicons.org/python/5c7f55"
+  },
+  {
+    "name": "SQL",
+    "src": "https://cdn.simpleicons.org/postgresql/5a7d56"
+  },
+  {
+    "name": "HTML",
+    "src": "https://cdn.simpleicons.org/html5/c86f3f"
+  },
+  {
+    "name": "CSS",
+    "src": "https://cdn.simpleicons.org/css/4f75b5"
+  },
+  {
+    "name": "C#",
+    "src": "https://cdn.simpleicons.org/sharp/5a7d56"
+  },
+  {
+    "name": "C++",
+    "src": "https://cdn.simpleicons.org/cplusplus/4d78b0"
+  },
+  {
+    "name": "React",
+    "src": "https://cdn.simpleicons.org/react/4d8ca0"
+  },
+  {
+    "name": "Next.js",
+    "src": "https://cdn.simpleicons.org/nextdotjs/445346"
+  },
+  {
+    "name": "Node.js",
+    "src": "https://cdn.simpleicons.org/nodedotjs/4f7f3e"
+  },
+  {
+    "name": "Express",
+    "src": "https://cdn.simpleicons.org/express/445346"
+  },
+  {
+    "name": "React Native",
+    "src": "https://cdn.simpleicons.org/react/4f8ca5"
+  },
+  {
+    "name": "Tailwind CSS",
+    "src": "https://cdn.simpleicons.org/tailwindcss/4c9cab"
+  },
+  {
+    "name": ".NET",
+    "src": "https://cdn.simpleicons.org/dotnet/5a668f"
+  },
+  {
+    "name": "Git",
+    "src": "https://cdn.simpleicons.org/git/a7603b"
+  },
+  {
+    "name": "Docker",
+    "src": "https://cdn.simpleicons.org/docker/4b80b8"
+  },
+  {
+    "name": "Figma",
+    "src": "https://cdn.simpleicons.org/figma/b96d52"
+  },
+  {
+    "name": "GitHub",
+    "src": "https://cdn.simpleicons.org/github/445346"
+  },
+  {
+    "name": "VS Code",
+    "src": "https://api.iconify.design/simple-icons:visualstudiocode.svg?color=%233d73a5"
+  },
+  {
+    "name": "Visual Studio",
+    "src": "https://api.iconify.design/simple-icons:visualstudio.svg?color=%237a5ba5"
+  },
+  {
+    "name": "Expo",
+    "src": "https://cdn.simpleicons.org/expo/445346"
+  }
+]

@@ -8,11 +8,18 @@ import Werewolf from "./images/projects/Werewolf.png"
 
 const Projects = [
   {
-    name: "One Night Werewolf Boardgame (WIP)",
+    name: "AI-Integrated Receipt Scanner",
+    description: "A receipt scanner integrated with AI to automatically extract and categorize expense information.",
+    date: { year: 2025, month: 5 },
+    tools: ["TypeScript", "React Native", "NodeJS"],
+  },
+  {
+    name: "One Night Werewolf Boardgame",
     description: "An online version of the Werewolf boardgame. Features include voice calling and lobby creation.",
     date: { year: 2024, month: 4 },
     tools: ["HTML", "CSS", "TypeScript", "React", "NextJS", "Tailwind", "DaisyUI"],
     demo: "https://werewolf-peom.onrender.com/",
+    source: "https://github.com/jadenet/werewolf-boardgame",
     image: Werewolf,
   },
   {

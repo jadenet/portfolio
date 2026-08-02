@@ -7,11 +7,12 @@ interface dropdownProps {
 
 function Dropdown(props: dropdownProps) {
   return (
-    <details className="flex flex-col items-center relative">
-      <summary className="py-2 hover:scale-105 active:scale-95 transition text-black">
-        {props.text}
+    <details className="relative">
+      <summary className="secondary-button cursor-pointer gap-2 px-5 py-3 text-xs uppercase tracking-[0.18em]">
+        <span>{props.text}</span>
+        <span className="text-base leading-none">+</span>
       </summary>
-      <div className="absolute z-10 border-2 border-gray-800 top-full bg-white rounded-md flex flex-col items-center">
+      <div className="surface-panel absolute right-0 top-[calc(100%+0.75rem)] z-10 min-w-[14rem] rounded-[1.5rem] p-3">
         {props.children}
       </div>
     </details>

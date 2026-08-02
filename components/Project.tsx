@@ -8,51 +8,59 @@ interface ProjectProps {
   description: string;
   demo?: string | null;
   source?: string | null;
-  image: StaticImageData;
+  image?: StaticImageData | string;
 }
 
 function Project(props: ProjectProps) {
   const date = new Date(props.date.year, props.date.month);
+  const imageSource = props.image ?? "/images/projects/placeholder-project.svg";
 
   return (
-    <article className="flex flex-col w-5/6 lg:w-3/5 md:flex-row bg-white text-black rounded-xl">
-      <div className="relative md:w-3/5 overflow-hidden rounded-t-xl md:rounded-tr-none md:rounded-bl-xl bg-black">
+    <article className="surface-panel flex h-[25.5rem] w-full flex-col overflow-hidden rounded-[1.5rem]">
+      <div className="relative h-44 border-b border-[var(--line)] bg-[var(--surface-subtle)]">
         <Image
           aria-hidden
-          src={props.image}
+          src={imageSource}
           fill
-          alt="Project image"
-          className="absolute w-full h-full object-cover blur-md opacity-50 scale-125"
+          alt=""
+          className="absolute h-full w-full scale-110 object-cover opacity-40"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--surface-subtle)]/60" />
         <Image
-          src={props.image}
+          src={imageSource}
           fill
           alt="Project image"
-          className="absolute w-full h-full object-contain px-8"
+          sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 95vw"
+          className="absolute h-full w-full object-contain p-3 drop-shadow-[0_14px_24px_rgba(0,0,0,0.28)]"
         />
       </div>
-      <div className="flex flex-col justify-between gap-5 p-6 md:w-2/5">
-        <div className="flex flex-col gap-5">
-          <p className="text-right">{`${date.toLocaleDateString("default", {
+      <div className="flex h-full flex-col justify-between gap-4 p-4">
+        <div className="flex flex-col gap-3">
+          <p className="text-xs uppercase tracking-[0.2em] text-[var(--gold)]">{`${date.toLocaleDateString("default", {
             month: "short",
           })} ${date.getFullYear()}`}</p>
-          <h2 className="font-black text-3xl">{props.name}</h2>
-          <div className="flex flex-wrap gap-2">
-            {props.tools.map((tag) => {
+          <h2 className="line-clamp-2 text-2xl font-semibold leading-tight text-[var(--ink)]">{props.name}</h2>
+          <div className="flex flex-wrap gap-1.5">
+            {props.tools.slice(0, 4).map((tag) => {
               return (
-                <span className="border border-black rounded p-1">{tag}</span>
+                <span
+                  key={tag}
+                  className="rounded-full border border-[var(--line)] bg-[var(--surface-muted)] px-2 py-1 text-[0.62rem] font-bold uppercase tracking-[0.1em] text-[var(--ink-soft)]"
+                >
+                  {tag}
+                </span>
               );
             })}
           </div>
-          <p>{props.description}</p>
+          <p className="line-clamp-4 text-sm leading-6 text-[var(--ink-soft)]">{props.description}</p>
         </div>
 
-        <div className="flex items-center gap-2 justify-end">
+        <div className="flex flex-wrap items-center gap-2">
           {props.demo != null && (
             <Link
               href={props.demo}
               target="_blank"
-              className="font-bold py-2 px-5 rounded-lg hover:scale-105 active:scale-95 transition border-2 text-sm text-blue-400 border-blue-400"
+              className="secondary-button px-4 py-2 text-xs"
             >
               Demo
             </Link>
@@ -61,7 +69,7 @@ function Project(props: ProjectProps) {
             <Link
               href={props.source}
               target="_blank"
-              className="font-bold py-2 px-5 rounded-lg hover:scale-105 active:scale-95 transition border-2 text-sm text-white bg-blue-400 border-blue-400"
+              className="primary-button px-4 py-2 text-xs"
             >
               Source Code
             </Link>
