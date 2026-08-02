@@ -13,26 +13,43 @@ interface ProjectProps {
 
 function Project(props: ProjectProps) {
   const date = new Date(props.date.year, props.date.month);
-  const imageSource = props.image ?? "/images/projects/placeholder-project.svg";
+  const customImage = props.image;
 
   return (
-    <article className="surface-panel flex h-[25.5rem] w-full flex-col overflow-hidden rounded-[1.5rem]">
-      <div className="relative h-44 border-b border-[var(--line)] bg-[var(--surface-subtle)]">
-        <Image
-          aria-hidden
-          src={imageSource}
-          fill
-          alt=""
-          className="absolute h-full w-full scale-110 object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--surface-subtle)]/60" />
-        <Image
-          src={imageSource}
-          fill
-          alt="Project image"
-          sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 95vw"
-          className="absolute h-full w-full object-contain p-3 drop-shadow-[0_14px_24px_rgba(0,0,0,0.28)]"
-        />
+    <article className="surface-panel flex h-[29rem] w-full flex-col overflow-hidden rounded-[1.5rem]">
+      <div className="relative h-96 border-b border-[var(--line)] bg-[var(--surface-subtle)]">
+        {customImage != null ? (
+          <Image
+            aria-hidden
+            src={customImage}
+            fill
+            alt=""
+            className="absolute h-full w-full scale-110 object-cover opacity-40"
+          />
+        ) : (
+          <img
+            src={""}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full scale-110 object-cover opacity-40"
+          />
+        )}
+        <div className="absolute inset-0 bg-[var(--surface-subtle)]/60" />
+        {customImage != null ? (
+          <Image
+            src={customImage}
+            fill
+            alt="Project image"
+            sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 95vw"
+            className="absolute h-full w-full object-contain p-4"
+          />
+        ) : (
+          <img
+            src={""}
+            alt="Preview not available"
+            className="absolute inset-0 h-full w-full object-contain p-4"
+          />
+        )}
       </div>
       <div className="flex h-full flex-col justify-between gap-4 p-4">
         <div className="flex flex-col gap-3">
