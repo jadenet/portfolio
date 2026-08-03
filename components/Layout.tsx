@@ -22,11 +22,7 @@ function Layout({ children, theme, onToggleTheme }: LayoutProps) {
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 pb-6 pt-4 sm:px-6 lg:px-8">
         <header className="sticky top-4 z-40 mb-8">
           <nav className="surface-panel flex items-center justify-between gap-4 rounded-2xl px-4 py-3 sm:px-6">
-            <Link href="/" className="font-display text-2xl font-semibold tracking-[0.18em] text-[var(--ink)]">
-              JE
-            </Link>
-
-            <div className="flex flex-wrap items-center justify-end gap-2">
+            <div className="flex flex-wrap items-center">
               {links.map((link) => {
                 const isActive = router.pathname === link.link;
 
@@ -44,17 +40,16 @@ function Layout({ children, theme, onToggleTheme }: LayoutProps) {
                   </Link>
                 );
               })}
+            </div>
 
+            <div className="flex flex-wrap items-center justify-end gap-2">
               <button
                 type="button"
                 onClick={onToggleTheme}
-                aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-                className="inline-flex h-11 items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface-strong)] px-4 text-sm font-semibold tracking-[0.08em] text-[var(--ink)] transition duration-200 hover:bg-[var(--surface-hover)]"
+                aria-label={`Theme switch to ${theme === "light" ? "dark" : "light"} mode`}
+                className="h-11 rounded-full border border-[var(--line)] bg-[var(--surface-strong)] px-4 text-sm font-semibold tracking-[0.08em] text-[var(--ink)] transition duration-200 hover:bg-[var(--surface-hover)]"
               >
-                <span aria-hidden="true" className="text-base leading-none">
-                  {theme === "light" ? "☾" : "☀"}
-                </span>
-                <span>{theme === "light" ? "Dark" : "Light"}</span>
+                  {theme === "light" ? "🌙" : "☀️"}
               </button>
             </div>
           </nav>

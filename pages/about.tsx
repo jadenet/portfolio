@@ -1,9 +1,3 @@
-import LinkedIn from "../public/links/linkedin.svg";
-import Email from "../public/links/email.svg";
-import GitHub from "../public/links/github.svg";
-import Resume from "../public/links/resume.svg";
-import LogoLink from "../components/LogoLink";
-
 function About() {
   return (
     <section className="section-shell mx-auto max-w-5xl overflow-hidden">
