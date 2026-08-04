@@ -15,7 +15,6 @@ const Projects = [
     tools: ["TypeScript", "React Native", "NodeJS"],
     demo: null,
     source: "https://github.com/jadenet/receipt-scanner",
-    image: null,
   },
   {
     name: "One Night Werewolf Boardgame",
