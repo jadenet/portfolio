@@ -63,15 +63,6 @@ function Project(props: ProjectProps) {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          {props.demo != null && (
-            <Link
-              href={props.demo}
-              target="_blank"
-              className="primary-button px-4 py-2 text-xs"
-            >
-              Demo
-            </Link>
-          )}
           {props.source != null && (
             <Link
               href={props.source}
@@ -79,6 +70,15 @@ function Project(props: ProjectProps) {
               className="secondary-button px-4 py-2 text-xs"
             >
               Source Code
+            </Link>
+          )}
+          {props.demo != null && (
+            <Link
+              href={props.demo}
+              target="_blank"
+              className="primary-button px-4 py-2 text-xs"
+            >
+              Demo
             </Link>
           )}
         </div>
