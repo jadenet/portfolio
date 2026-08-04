@@ -13,7 +13,9 @@ const Projects = [
       "First mobile app created using React Native, featuring a receipt scanner integrated with AI to automatically extract and categorize purchases.",
     date: { year: 2025, month: 5 },
     tools: ["TypeScript", "React Native", "NodeJS"],
+    demo: null,
     source: "https://github.com/jadenet/receipt-scanner",
+    image: null,
   },
   {
     name: "One Night Werewolf Boardgame",
@@ -59,6 +61,8 @@ const Projects = [
       "I participated in a 3-day long hackathon with 3 team members to create an execute a development idea. I used the time as an opportunity to gain collaborative and coding experience working on a thought-out project.",
     date: { year: 2022, month: 9 },
     tools: ["HTML", "CSS", "JavaScript", "React", "NextJS", "MUI"],
+    demo: null,
+    source: "https://github.com/jadenet/ShellHacks2022",
     image: MentorMe,
   },
   {
@@ -68,6 +72,7 @@ const Projects = [
     date: { year: 2022, month: 6 },
     tools: ["HTML", "CSS", "Svelte", "TypeScript", "Tailwind", "Supabase"],
     demo: null,
+    source: "https://github.com/jadenet/i-luminate",
     image: iLuminate,
   },
   {
@@ -76,6 +81,8 @@ const Projects = [
       "A joke site suggested by a friend. Realized at this point that websites needed to look good on both mobile and desktop, so I learned about CSS relative units and media queries to make the site responsive.",
     date: { year: 2022, month: 4 },
     tools: ["HTML", "CSS"],
+    demo: null,
+    source: "https://github.com/jadenet/iScream",
     image: iScream,
   },
   {
@@ -84,6 +91,8 @@ const Projects = [
       "The first website I've made for fun! This was all before learning about responsive design and accessibility, but making this gave me the confidence to learn more about web development.",
     date: { year: 2022, month: 3 },
     tools: ["HTML", "CSS"],
+    demo: null,
+    source: "https://github.com/jadenet/2-Hour-Front-Page",
     image: TwoHourFrontPage,
   },
 ];
