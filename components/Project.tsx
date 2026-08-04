@@ -19,36 +19,26 @@ function Project(props: ProjectProps) {
     <article className="surface-panel flex h-[29rem] w-full flex-col overflow-hidden rounded-[1.5rem]">
       <div className="relative h-96 border-b border-[var(--line)] bg-[var(--surface-subtle)]">
         {customImage != null ? (
-          <Image
-            aria-hidden
-            src={customImage}
-            fill
-            alt=""
-            className="absolute h-full w-full scale-110 object-cover opacity-40"
-          />
+          <>
+            <Image
+              aria-hidden
+              src={customImage}
+              fill
+              alt=""
+              className="absolute h-full w-full scale-110 object-cover opacity-40"
+            />
+            <Image
+              src={customImage}
+              fill
+              alt="Project image"
+              sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 95vw"
+              className="absolute h-full w-full object-contain p-4"
+            />
+          </>
         ) : (
-          <img
-            src={""}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full scale-110 object-cover opacity-40"
-          />
-        )}
-        <div className="absolute inset-0 bg-[var(--surface-subtle)]/60" />
-        {customImage != null ? (
-          <Image
-            src={customImage}
-            fill
-            alt="Project image"
-            sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 95vw"
-            className="absolute h-full w-full object-contain p-4"
-          />
-        ) : (
-          <img
-            src={""}
-            alt="Preview not available"
-            className="absolute inset-0 h-full w-full object-contain p-4"
-          />
+          <div className="absolute h-full inset-0 flex items-center justify-center bg-[var(--surface-muted)] px-6 text-center text-sm leading-6 text-[var(--ink-soft)]">
+            No image available, sorry :(
+          </div>
         )}
       </div>
       <div className="flex h-full flex-col justify-between gap-4 p-4">
@@ -77,7 +67,7 @@ function Project(props: ProjectProps) {
             <Link
               href={props.demo}
               target="_blank"
-              className="secondary-button px-4 py-2 text-xs"
+              className="primary-button px-4 py-2 text-xs"
             >
               Demo
             </Link>
@@ -86,7 +76,7 @@ function Project(props: ProjectProps) {
             <Link
               href={props.source}
               target="_blank"
-              className="primary-button px-4 py-2 text-xs"
+              className="secondary-button px-4 py-2 text-xs"
             >
               Source Code
             </Link>

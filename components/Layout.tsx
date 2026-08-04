@@ -58,7 +58,7 @@ function Layout({ children, theme, onToggleTheme }: LayoutProps) {
         <main className="flex-1">{children}</main>
 
         <footer className="mt-12 border-t border-[var(--line)] py-6 text-center text-sm text-[var(--ink-soft)]">
-          © Jaden Edwards. All rights reserved.
+          &copy; Jaden Edwards. All rights reserved.
         </footer>
       </div>
     </>
