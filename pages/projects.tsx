@@ -86,7 +86,7 @@ function Projects() {
               Projects
             </h1>
             <p className="text-lg leading-8 text-[var(--ink-soft)]">
-              From experiments and hackathons to classwork and client work, these are the projects that brought me into the software developer I am now.
+              From experiments and hackathons, to classwork and client work, these are the projects that raised me into the developer I am now.
             </p>
           </div>
         </div>
